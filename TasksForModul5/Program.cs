@@ -11,9 +11,9 @@ namespace TasksForModul5
         static void Main(string[] args)
         {
             int[] array = GetArrayFromCosole();
-            array = SortArray(array);
+            var sortedarray = SortArray(array);
         }
-        static int[] GetArrayFromCosole(int num = 5)
+        static int[] GetArrayFromCosole()
         {
             var result = new int[5];
 
