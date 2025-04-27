@@ -10,10 +10,10 @@ namespace TasksForModul5
     {
         static void Main(string[] args)
         {
-            int[] array = GetArrayFromCosole();
-            var sortedarray = SortArray(array);
+            int[] array = GetArrayFromCosole(10);
+            ShowArray(array, true);
         }
-        static int[] GetArrayFromCosole()
+        static int[] GetArrayFromCosole(int num)
         {
             var result = new int[5];
 
@@ -40,8 +40,7 @@ namespace TasksForModul5
 
                     }
 
-            for (int i = 0; i < result.Length; i++)
-                Console.WriteLine(result[i]);
+            
             return result;
         }
 
