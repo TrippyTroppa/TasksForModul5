@@ -41,7 +41,7 @@ namespace TasksForModul5
 
         static string ShowColor(string username, int userage)
         {
-            Console.WriteLine($"{username},{userage}\nНапишите свой любимый цвет на английском с маленькой буквы");
+            Console.WriteLine($"{username},{userage} лет\nНапишите свой любимый цвет на английском с маленькой буквы");
             var color = Console.ReadLine();
 
             switch (color)
