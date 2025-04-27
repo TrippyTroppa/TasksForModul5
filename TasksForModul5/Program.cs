@@ -27,7 +27,7 @@ namespace TasksForModul5
 
             for (int i = 0; i < favcolor.Length; i++)
             {
-                favcolor[i] = ShowColor(name);
+                favcolor[i] = ShowColor(name, age);
 
             }
 
@@ -39,9 +39,9 @@ namespace TasksForModul5
 
         }
 
-        static string ShowColor(string username)
+        static string ShowColor(string username, int userage)
         {
-            Console.WriteLine($"{username}, напишите свой любимый цвет на английском с маленькой буквы");
+            Console.WriteLine($"{username},{userage}\nНапишите свой любимый цвет на английском с маленькой буквы");
             var color = Console.ReadLine();
 
             switch (color)
