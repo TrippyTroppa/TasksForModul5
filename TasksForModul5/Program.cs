@@ -23,10 +23,23 @@ namespace TasksForModul5
             Console.WriteLine("Ваше имя: {0}", name);
             Console.WriteLine("Ваш возраст: {0}", age);
 
-            ShowColor();
+            var favcolor = new string[3];
+
+            for (int i = 0; i < favcolor.Length; i++)
+            {
+                favcolor[i] = ShowColor();
+
+            }
+
+            Console.WriteLine("Ваши любимые цвета: ");
+            foreach (var color in favcolor)
+            {
+                Console.WriteLine(color);
+            }
+
         }
 
-        static void ShowColor()
+        static string ShowColor()
         {
             Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
             var color = Console.ReadLine();
@@ -58,7 +71,9 @@ namespace TasksForModul5
 
                     Console.WriteLine("Your color is yellow!");
                     break;
+
             }
+            return color;
         }
     }
 }
