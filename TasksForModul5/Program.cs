@@ -11,71 +11,25 @@ namespace TasksForModul5
     {
         static void Main(string[] args)
         {
-            int[] array = new int[] { -48, 89, -9, 225, -58, -2, 199 };
-            int[] sortedDesc;
-            int[] sortedAsc;
+            Console.WriteLine("Напишите что-то...");
 
-            SortArray(array, out sortedDesc, out sortedAsc);
+            var str = Console.ReadLine();
 
-            Console.WriteLine("Исходный массив:");
-            foreach (int element in array)
-            {
-                Console.Write(element + " ");
-            }
-            Console.WriteLine();
+            Console.WriteLine("Укажите глубину эха");
 
-            Console.WriteLine("Отсортированный по возрастанию:");
-            foreach (int element in sortedAsc)
-            {
-                Console.Write(element + " ");
-            }
-            Console.WriteLine();
+            var deep = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Отсортированный по убыванию:");
-            foreach (int element in sortedDesc)
-            {
-                Console.Write(element + " ");
-            }
-            Console.WriteLine();
+            Echo(str, deep);
         }
-
-        static void SortArray(in int[] array, out int[] sortedDesc, out int[] sortedAsc)
+        static void Echo(string phrase, int deep)
         {
-            sortedDesc = SortArrayDesc(array);
-            sortedAsc = SortArrayAsc(array);
+            Console.WriteLine(phrase);
+            if (deep > 1)
+            {
+                Echo (phrase, deep - 1);
+            }
+                
         }
-
-        static int[] SortArrayAsc(in int[] array)
-        {
            
-            int[] result = (int[])array.Clone();
-            int temp = 0;
-            for (int i = 0; i < result.Length; i++)
-                for (int j = i + 1; j < result.Length; j++)
-                    if (result[i] > result[j])
-                    {
-                        temp = result[i];
-                        result[i] = result[j];
-                        result[j] = temp;
-                    }
-            return result;
-        }
-
-        static int[] SortArrayDesc(in int[] array)
-        {
-           
-            int[] result = (int[])array.Clone();
-            int temp = 0;
-            for (int i = 0; i < result.Length; i++)
-                for (int j = i + 1; j < result.Length; j++)
-                    if (result[i] < result[j])
-                    {
-                        temp = result[i];
-                        result[i] = result[j];
-                        result[j] = temp;
-                    }
-            return result;
-        }
     }
-
 }
