@@ -10,19 +10,23 @@ namespace TasksForModul5
     {
         static void Main(string[] args)
         {
-            var age = 81;
-            Console.WriteLine(age);
-
-            ChangeAge(ref age);
-
-            Console.WriteLine(age);
-
+            int size = 9;
+            int[] array = new int[size]; 
+            
+            GetArrayFromConsole(array, ref size);
+            
         }
-       static void ChangeAge (ref int myage)
+       static int [] GetArrayFromConsole(int [] array, ref int size)
         {
-            Console.Write("Введите ваш возраст:");
+            size = 6;
+            int [] newarray = new int[size];
 
-            myage = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write($"Введите число номер {i + 1}: ");
+                newarray[i] = int.Parse(Console.ReadLine());
+            }
+            return newarray;
         }
     }
 
