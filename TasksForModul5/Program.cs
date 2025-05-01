@@ -10,52 +10,19 @@ namespace TasksForModul5
     {
         static void Main(string[] args)
         {
-            int[] array = GetArrayFromCosole(10);
-            ShowArray(array, true);
-        }
-        static int[] GetArrayFromCosole(int num)
-        {
-            var result = new int[5];
+            var age = 81;
+            Console.WriteLine(age);
 
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.Write($"Введите число номер {i + 1} масива: ");
-                result[i] = int.Parse(Console.ReadLine());
-            }
-            return result;
+            ChangeAge(age);
 
+            Console.WriteLine(age);
 
         }
-
-        static int[] SortArray(int[] result)
+       static void ChangeAge (int myage)
         {
-            int temp = 0;
-            for (int i = 0; i < result.Length; i++)
-                for (int j = i + 1; j < result.Length; j++)
-                    if (result[i] > result[j])
-                    {
-                        temp = result[i];
-                        result[i] = result[j];
-                        result[j] = temp;
+            Console.Write("Введите ваш возраст:");
 
-                    }
-
-            
-            return result;
-        }
-
-        static void ShowArray(int[] array, bool IsSort = false)
-        {
-            var temp = array;
-            if (IsSort)
-            {
-                temp = SortArray(array);
-            }
-
-            foreach (var item in temp)
-            {
-                Console.WriteLine(item);
-            }
+            myage = Convert.ToInt32(Console.ReadLine());
         }
     }
 
