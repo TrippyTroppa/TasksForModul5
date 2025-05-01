@@ -13,12 +13,12 @@ namespace TasksForModul5
             var age = 81;
             Console.WriteLine(age);
 
-            ChangeAge(age);
+            ChangeAge(ref age);
 
             Console.WriteLine(age);
 
         }
-       static void ChangeAge (int myage)
+       static void ChangeAge (ref int myage)
         {
             Console.Write("Введите ваш возраст:");
 
