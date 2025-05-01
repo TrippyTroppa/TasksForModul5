@@ -11,19 +11,27 @@ namespace TasksForModul5
     {
         static void Main(string[] args)
         {
-            int x = int.Parse(Console.ReadLine());
-            decimal res = Factorial(x);
-            Console.WriteLine(res);
+            Console.WriteLine(PowerUp(2,3));
         }
-        static decimal Factorial(int x)
+        private static int PowerUp(int N, byte pow)
         {
-            if (x == 0)
+            if (pow == 0)
             {
                 return 1;
             }
             else
             {
-                return x * Factorial(x - 1);
+
+                if (pow == 1)
+                {
+                    return N;
+
+                }
+                else
+                {
+                    return N * PowerUp(N, --pow);
+
+                }
             }
         }
     }
